@@ -1,15 +1,11 @@
 import AppLoader from './appLoader';
 import { INewsResponse,ISourceResponse } from 'types/interfaces';
-import { NewsCategory } from 'types/enums';
 
 class AppController extends AppLoader {
     getSources(callback: (data: ISourceResponse) => void): void {
         super.getResp(
             {
                 endpoint: 'sources',
-                options: {
-                    category:NewsCategory.Technology,
-                }, 
             },
             callback
         );
